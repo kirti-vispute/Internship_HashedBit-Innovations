@@ -106,18 +106,6 @@ img {
     transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
-.social-icon {
-    align-items: center;
-    background: #ffffff;
-    border-radius: 50%;
-    display: inline-flex;
-    font-size: 15px;
-    font-weight: 900;
-    height: 24px;
-    justify-content: center;
-    width: 24px;
-}
-
 .social-links a:hover {
     box-shadow: 0 10px 22px #214c4a26;
     transform: translateY(-2px) scale(1.04);
