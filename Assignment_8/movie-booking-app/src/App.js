@@ -2,11 +2,11 @@ import React, { useState } from "react";
 
 function App() {
   const movieData = [
-    { title: "Frozen", img: "https://via.placeholder.com/150?text=Frozen" },
-    { title: "Inception", img: "https://via.placeholder.com/150?text=Inception" },
-    { title: "Jawan", img: "https://via.placeholder.com/150?text=Jawan" },
-    { title: "KGF", img: "https://via.placeholder.com/150?text=KGF" },
-  ];
+  { title: "Frozen", img: "/images/frozen.jpg" },
+  { title: "Inception", img: "/images/inception.webp" },
+  { title: "Jawan", img: "/images/jawan.webp" },
+  { title: "KGF", img: "/images/kgf.jpg" },
+];
 
   const [step, setStep] = useState(1);
   const [movie, setMovie] = useState({});
@@ -55,7 +55,16 @@ function App() {
           >
             {movieData.map((m, index) => (
               <div key={index} onClick={() => selectMovie(m)}>
-                <img src={m.img} alt={m.title} />
+                <img
+                  src={m.img}
+                  alt={m.title}
+                  style={{
+                    width: "180px",
+                    height: "260px",
+                    objectFit: "cover",
+                    borderRadius: "10px",
+                  }}
+                />
                 <h3>{m.title}</h3>
               </div>
             ))}
@@ -66,7 +75,16 @@ function App() {
       {step === 2 && (
         <div>
           <h2>Movie Details</h2>
-          <img src={movie.img} alt={movie.title} />
+          <img
+            src={movie.img}
+            alt={movie.title}
+            style={{
+              width: "220px",
+              height: "320px",
+              objectFit: "cover",
+              borderRadius: "10px",
+            }}
+          />
           <h3>{movie.title}</h3>
           <p>Click below to book your seat.</p>
           <button onClick={bookNow}>Book Seat</button>
